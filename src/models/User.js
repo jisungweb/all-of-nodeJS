@@ -11,10 +11,16 @@ const userSchema = new mongoose.Schema(
             trim : true,
             lowercase : true, // 비번에는 사용하면 bcrypt해독할때 문제생김. 
         },
+        password : {
+            type : String,
+            required : true,
+            minlength : 2,
+            maxlength : 15,
+        },
         image : {
             type : String, // 이미지 파일 이름! => 문자열
             data : Buffer,
-        }
+        },
     }
 )
 
