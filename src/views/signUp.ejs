@@ -7,9 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/api/auth/sign-up" method="post">
-        <input type="file" name="userFile" id="userFile">
-        <input type="submit" value="회원가입">
+    <form action="/api/auth/sign-up" method="post" enctype="multipart/form-data">
+        <!-- enctype저 속성을 지정해야 파일이 서버로 넘어간다. -->
+        <input type="email" name="email" id="email">
+        <input type="file" name="image" id="image">
+        <!-- email image가 req.body에 담겨져서 action POST된다. -->
+        <input type="submit" value="SIGN-UP">
     </form>
 </body>
 </html>
