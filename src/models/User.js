@@ -1,6 +1,18 @@
 'use strict';
 const { truncateSync } = require('fs');
 const mongoose = require('mongoose');
+const imageSchema = new mongoose.Schema(
+    {
+        name : { // image 이름 
+            type : String,
+            required : true,
+        },
+        image : {
+            data : Buffer,
+            contentType : String,
+        }
+    },
+)
 const userSchema = new mongoose.Schema(
     {
         email : {
@@ -17,10 +29,7 @@ const userSchema = new mongoose.Schema(
             minlength : 2,
             maxlength : 15,
         },
-        image : {
-            type : String, // 이미지 파일 이름! => 문자열
-            data : Buffer,
-        },
+        image : imageSchema, // 위에 선언된 스키마 대입가능;
     }
 )
 
