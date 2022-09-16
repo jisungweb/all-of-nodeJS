@@ -9,3 +9,5 @@
 ## 아침
 - img를 multer를 이용해서 저장을 했고, schema저장은 아직 애매함.
 - image schema를 어떻게 작성을 해줘야하는지 살짝 걱정.
+- multer.diskStorage라는 multer함수의 프로퍼티객체 사용. 
+- img schema의 data속성에 req.file.filename으로 파일이름추가. 
